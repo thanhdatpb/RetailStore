@@ -16,12 +16,12 @@ public class SecurityConfig {
         UserDetails user = User.builder()
                 .username("thanhdatpb")
                 .password("{bcrypt}$2a$10$RsuVicQPTO3y9NyAK3NdreGQBRBWi27mH90ENeJ9oyXj6C9yOG32u")
-//                .roles(USER)
+                .roles("USER")
                 .build();
         UserDetails admin = User.builder()
                 .username("thanhdatadmin")
                 .password("{bcrypt}$2a$10$escugug.KeCKOsopfjZfaeO9fnTPY/tciI12zppdHIWa7uTYfQCn.")
-    //                .roles(USER, ADMIN)
+                .roles("USER", "ADMIN")
                 .build();
         return new InMemoryUserDetailsManager(user, admin);
     }
