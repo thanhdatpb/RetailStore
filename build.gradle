@@ -8,15 +8,17 @@ version = '0.0.1-SNAPSHOT'
 java {
     sourceCompatibility = '17'
 }
-//repositories {
-//    mavenCentral()
-//}
-
 repositories {
     mavenCentral()
-    maven { url 'https://repo.spring.io/milestone' }
-    maven { url 'https://repo.spring.io/snapshot' }
 }
+
+//repositories {
+//    mavenCentral()
+//    maven { url 'https://repo.spring.io/milestone' }
+//    maven { url 'https://repo.spring.io/snapshot' }
+//}
+
+
 
 dependencies {
     //commons lib
@@ -34,12 +36,6 @@ dependencies {
 
     //PostgreSQl JDBC Driver
     implementation group: 'org.postgresql', name: 'postgresql', version: '42.7.3'
-//    Fix
-//    compile('org.springframework.boot:spring-boot-starter-web')
-//    compile('org.springframework.boot:spring-boot-starter-velocity')
-//    runtime('org.springframework.boot:spring-boot-devtools')
-//    providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
-//    testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 tasks.named('test') {
     useJUnitPlatform()
