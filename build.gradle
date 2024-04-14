@@ -34,7 +34,7 @@ dependencies {
     //Database
     implementation 'org.springframework.boot : spring-boot-starter-data-jpa'
 
-    //PostgreSQl JDBC Driver 8
+    //PostgreSQl JDBC Driver
     implementation group: 'org.postgresql', name: 'postgresql', version: '42.7.3'
 }
 tasks.named('test') {

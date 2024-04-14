@@ -7,27 +7,37 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
+
+import javax.sql.DataSource;
+import javax.xml.crypto.Data;
 
 @Configuration
 public class SecurityConfig {
     @Bean
-    public UserDetailsService userDetailsService(){
+    public UserDetailsService userDetailsService(DataSource dataSource){
         UserDetails user = User.builder()
                 .username("thanhdatpb")
-                .password("{bcrypt}$2a$10$RsuVicQPTO3y9NyAK3NdreGQBRBWi27mH90ENeJ9oyXj6C9yOG32u")
+                .password("$2a$10$Y3Zmb1XwpPiqvMJC.447dubKGn/mKrxbbzoxTU.S5fu.77pqGz7yW")
                 .roles("USER")
                 .build();
         UserDetails admin = User.builder()
                 .username("thanhdatadmin")
-                .password("{bcrypt}$2a$10$escugug.KeCKOsopfjZfaeO9fnTPY/tciI12zppdHIWa7uTYfQCn.")
+                .password("$2a$10$Y3Zmb1XwpPiqvMJC.447dubKGn/mKrxbbzoxTU.S5fu.77pqGz7yW")
                 .roles("USER", "ADMIN")
                 .build();
-        return new InMemoryUserDetailsManager(user, admin);
+
+        JdbcUserDetailsManager users = new JdbcUserDetailsManager(dataSource);
+        users.createUser(user);
+        users.createUser(admin);
+
+        return users;
     }
 
     public PasswordEncoder passwordEncoder(){
-        
+        return new BCryptPasswordEncoder();
     }
 }
