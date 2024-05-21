@@ -1,11 +1,12 @@
 package com.rs.retailstore.controller;
 
 import com.rs.retailstore.model.Greeting;
-import jakarta.websocket.server.PathParam;
+//import jakarta.websocket.server.PathParam;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.atomic.AtomicLong;
 
+@SuppressWarnings("unused")
 @RestController
 @RequestMapping("/v1")
 public class CustomerGreetingController {
