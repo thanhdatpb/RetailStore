@@ -6,3 +6,16 @@
 
 server.port= 8888
 server.servlet.context-path= /thanhdatpb
+
+
+spring.datasource.url=jdbc:postgresql://localhost:5433/RetailStore
+spring.datasource.username=postgresql
+spring.datasource.password=1234
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.hikari.minimum-idle=5
+spring.datasource.hikari.maximum-pool-size=10
+spring.datasource.hikari.idle-timeout=30000
+spring.datasource.hikari.pool-name=HikariPool-1
+spring.datasource.hikari.max-lifetime=600000
+spring.datasource.hikari.connection-timeout=30000
+spring.datasource.hikari.connection-test-query=SELECT 1

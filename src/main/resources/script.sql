@@ -12,3 +12,9 @@ CREATE TABLE authorities
     authority varchar(50) NOT NULL,
     CONSTRAINT fk_username FOREIGN KEY (username) REFERENCES users (username) ON DELETE CASCADE
 );
+
+
+java.sql.SQLException: Access denied for user 'postgresql'@'localhost' (using password: YES)
+    at com.postgresql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+    at com.postgresql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+    ...
