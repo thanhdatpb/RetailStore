@@ -14,7 +14,7 @@ CREATE TABLE authorities
 );
 
 
-java.sql.SQLException: Access denied for user 'postgresql'@'localhost' (using password: YES)
+java.sql.SQLException: Access denied for user 'postgres'@'localhost' (using password: YES)
     at com.postgresql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
     at com.postgresql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
     ...
